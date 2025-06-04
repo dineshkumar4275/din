@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Payment Form</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: sans-serif;
+}
+
+.payment-section {
+  max-width: 400px;
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: black;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-section .logo {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+.payment-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.payment-section label {
+  display: block;
+  margin: 10px 0 5px;
+  color: white;
+}
+
+.payment-section input,
+.payment-section select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #222;
+  color: white;
+}
+
+.payment-section button {
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.payment-section button:hover {
+  background-color: silver;
+}
+
+.card-details {
+  display: none; /* Will show only if needed */
+}
+
+/* Responsive Media Queries */
+
+@media (max-width: 600px) {
+  .payment-section {
+    width: 95%;
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .payment-section .logo {
+    max-width: 120px;
+  }
+
+  .payment-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .payment-section input,
+  .payment-section select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .payment-section button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .payment-section {
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  .payment-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .payment-section input,
+  .payment-section select {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .payment-section button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <div class="payment-section">
+    <img src="/templates/Advertismentimages/LOGO/photo.png" alt="Company Logo" class="logo">
+    <h2>Payment Details</h2>
+
+    <form action="/process-payment" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="" required>
+
+      <label for="payment-method">Payment Method</label>
+      <select id="payment-method" name="payment_method" required>
+        <option value="">Select Payment Method</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="paytm">Paytm</option>
+        <option value="phonepe">PhonePe</option>
+        <option value="googlepay">Google Pay</option>
+        <option value="card">Credit/Debit Card</option>
+      </select>
+
+      <div class="card-details" id="card-details">
+        <label for="cardnumber">Card Number</label>
+        <input
+          type="tel"
+          id="cardnumber"
+          name="cardnumber"
+          placeholder="1234 5678 9012 3456"
+          pattern="(\d{4}[\s\-]?){4}"
+          maxlength="19"
+        >
+
+        <label for="expiry">Expiry Date (MM/YY)</label>
+        <input
+          type="tel"
+          id="expiry"
+          name="expiry"
+          placeholder="08/25"
+          pattern="\d{2}/\d{2}"
+        >
+
+        <label for="cvv">CVV</label>
+        <input
+          type="tel"
+          id="cvv"
+          name="cvv"
+          placeholder="123"
+          pattern="\d{3}"
+          maxlength="3"
+        >
+      </div>
+
+   <a href="oder.html"></a> <button type="submit">Continue</button></a>
+   
+  </form>
+  </div>
+
+  <script>
+    // JavaScript to toggle card fields
+    const paymentMethod = document.getElementById("payment-method");
+    const cardDetails = document.getElementById("card-details");
+
+    paymentMethod.addEventListener("change", function () {
+      if (paymentMethod.value === "card") {
+        cardDetails.style.display = "block";
+      } else {
+        cardDetails.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

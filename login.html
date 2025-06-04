@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+  <style>
+    /* ===== BASE STYLES ===== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('/templates/loginbackgroundimage/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #800020; /* Burgundy color */
+}
+
+.login-container {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3);
+    backdrop-filter: blur(2px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* ===== FORM STYLES ===== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #800020;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #a00028;
+    box-shadow: 0 0 0 3px rgba(160, 0, 40, 0.2);
+}
+
+/* ===== PASSWORD OPTIONS ===== */
+.password-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0 20px;
+}
+
+.show-password {
+    display: flex;
+    align-items: center;
+}
+
+.show-password input {
+    width: auto;
+    margin-right: 8px;
+}
+
+.forgot-password {
+    color: #800020;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* ===== BUTTON STYLES ===== */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #800020;
+    border: 2px solid #800020;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.login-btn:hover {
+    background-color: #800020;
+    color: white;
+}
+
+/* ===== SIGN UP LINK ===== */
+.signup-link {
+    text-align: center;
+}
+
+.signup-link a {
+    color: #800020;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .password-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .forgot-password {
+        margin-top: 10px;
+        text-align: left;
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .form-group input, 
+    .login-btn {
+        padding: 10px;
+    }
+}
+  </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <form class="login-form">
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <div class="password-options">
+                <div class="show-password">
+                    <input type="checkbox" id="show-password">
+                    <label for="show-password">Show Password</label>
+                </div>
+                <a href="forgetpasswordpage/forgetpassword.html" class="forgot-password">Forgot password?</a>
+            </div>
+            
+           <a href="/templates/index.html"><button type="submit" class="login-btn">LOGIN</button></a>
+            
+            <div class="signup-link">
+                Don't have an account? <a href="/templates/SIGNUP.html">Sign Up</a>
+            </div>
+        </form>
+    </div>
+    <script src="">
+        document.addEventListener('DOMContentLoaded', function() {
+    const passwordInput = document.getElementById('password');
+    const showPasswordCheckbox = document.getElementById('show-password');
+    
+    showPasswordCheckbox.addEventListener('change', function() {
+        passwordInput.type = this.checked ? 'text' : 'password';
+    });
+});
+    </script>
+</body>
+</html>

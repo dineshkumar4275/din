@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <title>GOWEAR - Online Shopping</title>
+  
+ 
+</head>
+<body>
+  <nav>
+ <div class="nav-container">
+  <div id="logo">GOWEAR</div>
+
+  <!-- Hamburger icon (visible on small screens) -->
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search for products...">
+    <button>Search</button>
+  </div>
+
+  <div class="nav-links" id="mobileMenu">
+  
+    <a href="index.html">Home</a>
+    <a href="#silk-sarees">Shop</a>
+    <a href="about.html">About</a>
+    <a href="/templates/contact us.html">Contact</a>
+  </div>
+
+  <div class="icon-section">
+    <div class="icon-container">
+      <a href="/templates/login.html"><i class="fa fa-user"></i></a>
+    </div>
+   <div class="cart-icon" id="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </div>
+
+  </div>
+</div>
+  </nav>
+
+  <div class="head">
+    <div class="dropdown">
+      <a href="#">Women Ethnic</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Sarees</h4>
+          <a href="#silk-sarees">Silk Sarees</a>
+          <a href="#cotton-sarees">Cotton Sarees</a>
+          <a href="#georgette-sarees">Georgette Sarees</a>
+        </div>
+        <div class="column">
+          <h4>Kurtis</h4>
+          <a href="#anarkali-kurtis">Anarkali Kurtis</a>
+          <a href="#rayon-kurtis">Rayon Kurtis</a>
+        </div>
+        <div class="column">
+          <h4>Kurta Sets</h4>
+          <a href="#sharara-sets">Sharara Sets</a>
+          <a href="#palazzo-sets">Palazzo Sets</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Women Western</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Tops</h4>
+          <a href="#crop-tops">Crop Tops</a>
+          <a href="#t-shirts">T-Shirts</a>
+        </div>
+        <div class="column">
+          <h4>Dresses</h4>
+          <a href="#maxi-dresses">Maxi Dresses</a>
+          <a href="#bodycon-dresses">Bodycon Dresses</a>
+        </div>
+        <div class="column">
+          <h4>Bottom Wear</h4>
+          <a href="#jeans">Jeans</a>
+          <a href="#skirts">Skirts</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Men</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Top Wear</h4>
+          <a href="t-shirts">T-Shirts</a>
+          <a href="shirts">Shirts</a>
+        </div>
+        <div class="column">
+          <h4>Bottom Wear</h4>
+          <a href="jeans">Jeans</a>
+          <a href="trousers">Trousers</a>
+        </div>
+        <div class="column">
+          <h4>Ethnic</h4>
+          <a href="kurtas">Kurtas</a>
+          <a href="sherwanis">Sherwanis</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Kids</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Girls</h4>
+          <a href="frocks">Frocks</a>
+          <a href="skirts">Skirts</a>
+        </div>
+        <div class="column">
+          <h4>Boys</h4>
+          <a href="t-shirts">T-Shirts</a>
+          <a href="shirts">Shirts</a>
+        </div>
+        <div class="column">
+          <h4>Baby Care</h4>
+          <a href="diapers">Diapers</a>
+          <a href="toys">Toys</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Home & Kitchen</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Furnishing</h4>
+          <a href="bedsheets">Bedsheets</a>
+          <a href="curtains">Curtains</a>
+        </div>
+        <div class="column">
+          <h4>Essentials</h4>
+          <a href="cookware">Cookware</a>
+          <a href="storage">Storage</a>
+        </div>
+        <div class="column">
+          <h4>Decor</h4>
+          <a href="wall-arts">Wall Art</a>
+          <a href="lamps">Lamps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Beauty & Health</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Makeup</h4>
+          <a href="lipsticks">Lipsticks</a>
+          <a href="foundations">Foundations</a>
+        </div>
+        <div class="column">
+          <h4>Skincare</h4>
+          <a href="moisturizers">Moisturizers</a>
+          <a href="face-wash">Face Wash</a>
+        </div>
+        <div class="column">
+          <h4>Health</h4>
+          <a href="supplements">Supplements</a>
+          <a href="sanitizers">Sanitizers</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Bags & Footwear</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Bags</h4>
+          <a href="hand-bags">Handbags</a>
+          <a href="back-packs">Backpacks</a>
+        </div>
+        <div class="column">
+          <h4>Footwear</h4>
+          <a href="heels">Heels</a>
+          <a href="sneakers">Sneakers</a>
+        </div>
+        <div class="column">
+          <h4>Men's Bags</h4>
+          <a href="wallets">Wallets</a>
+          <a href="laptop-bags">Laptop Bags</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <a href="#">Electronics</a>
+      <div class="dropdown-content">
+        <div class="column">
+          <h4>Mobiles</h4>
+          <a href="smart-phones">Smartphones</a>
+          <a href="accessories">Accessories</a>
+        </div>
+        <div class="column">
+          <h4>Appliances</h4>
+          <a href="blenders">Blenders</a>
+          <a href="fans">Fans</a>
+        </div>
+        <div class="column">
+          <h4>Computers</h4>
+          <a href="laptops">Laptops</a>
+          <a href="keyboards">Keyboards</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner-container">
+    <img src="/templates/Advertismentimages/GOWEAR.jpg" alt="snapmart banner">
+    <button id="go">SHOP NOW</button>
+  </div>
+  <button id="but">ALL CATEGORIES</button>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Shopping Cart</h2>
+      <button class="close-cart" id="close-cart">&times;</button>
+    </div>
+   
+    <div class="cart-items" id="cart-items">
+      <p class="no-items" id="no-items">No items found.</p>
+    </div>
+     <a href="/templates/cart.html" class="buy-now-btn" id="checkout-btn" style="color: red;">Proceed to Checkout</a>
+  </div>
+
+
+
+        <div class="whatsapp-container">
+            <a href="https://wa.me/919042909734?text=Hi%20The%20GOWEAR%20team..." 
+               class="whatsapp-scroll" 
+               target="_blank"
+               aria-label="Chat on WhatsApp">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
+    
+
+  <!-- Products will be dynamically inserted here by JavaScript -->
+
+  <footer>
+    <p>&copy; 2025 Gowear. All rights reserved.</p>
+  </footer>
+
+<script src="/script.js"></script>
+  
+</body>
+
+
+</html>

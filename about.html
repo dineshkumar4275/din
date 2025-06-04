@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Gowear Dress Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #ff8e8e;
+            --light: #fff9f9;
+            --dark: #333;
+            --text: #555;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        /* About Us Hero */
+        .about-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('/templates/Advertismentimages/dress.jpg') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Main About Content */
+        .about-main {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+        
+        .story-section, .mission-section, .team-section {
+            margin-bottom: 4rem;
+            opacity: 0; /* For scroll animation */
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .story-content, .mission-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-content {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .image-content img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-content:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .member-photo {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+        }
+        
+        .member-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-info p {
+            color: var(--text);
+            font-style: italic;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--dark);
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: white;
+            padding: 4rem 2rem;
+            margin: 5rem 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { 
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from { 
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Scroll Animation */
+        .animate {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .story-content, .mission-content {
+                flex-direction: column;
+            }
+            
+            .text-content, .image-content {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- About Us Hero -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <h1>Our Story</h1>
+            <p>Discover the passion behind Gowear - where fashion meets individuality</p>
+        </div>
+    </section>
+    
+    <!-- Main About Content -->
+    <main class="about-main">
+        <!-- Our Story -->
+        <section class="story-section">
+            <h2 class="section-title">How It Began</h2>
+            <div class="story-content">
+                <div class="text-content">
+                    <p>Founded in 2015 by fashion enthusiast Sarah Johnson, Gowear started as a small boutique in downtown Seattle. What began as a single rack of handpicked dresses has grown into a beloved local destination for women seeking unique, high-quality fashion.</p>
+                    <p>Sarah's vision was simple: create a space where every woman could find clothing that made her feel confident and beautiful, without compromising on quality or breaking the bank. Today, that vision lives on through our carefully curated collections and personalized styling services.</p>
+                </div>
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gowear's first store">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Mission -->
+        <section class="mission-section">
+            <h2 class="section-title">Our Philosophy</h2>
+            <div class="mission-content">
+                <div class="image-content">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gowear styling session">
+                </div>
+                <div class="text-content">
+                    <p>At Gowear, we believe fashion should be joyful, accessible, and sustainable. We're committed to:</p>
+                    <ul style="margin: 1rem 0 1rem 2rem;">
+                        <li>Curating dresses that combine quality craftsmanship with timeless design</li>
+                        <li>Supporting local designers and ethical manufacturers</li>
+                        <li>Providing personalized styling advice to help you discover your signature look</li>
+                        <li>Creating a welcoming space where all women feel celebrated</li>
+                    </ul>
+                    <p>We're not just selling dresses - we're helping you express your unique story through fashion.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Team -->
+        <section class="team-section">
+            <h2 class="section-title">Meet Our Family</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Sarah Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>Founder & Lead Buyer</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Michael Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Chen</h3>
+                        <p>Head Stylist</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Jessica Martinez">
+                    </div>
+                    <div class="member-info">
+                        <h3>Jessica Martinez</h3>
+                        <p>Store Manager</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Our Values -->
+    <section class="values-section">
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-heart"></i></div>
+                <h3>Passion for Fashion</h3>
+                <p>We live and breathe style, always seeking the perfect pieces for our customers</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>Community Focus</h3>
+                <p>We support local designers and give back to our neighborhood</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Sustainable Practices</h3>
+                <p>Ethical sourcing and eco-friendly packaging matter to us</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-gem"></i></div>
+                <h3>Quality First</h3>
+                <p>Every dress in our shop meets our high standards for craftsmanship</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll animation trigger
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.story-section, .mission-section, .team-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

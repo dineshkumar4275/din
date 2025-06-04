@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Order Successful</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f9f9f9;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  #order-success {
+    text-align: center;
+    padding: 2rem;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.2);
+    max-width: 300px;
+  }
+
+  .tick-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem auto;
+  }
+
+  .tick {
+    stroke: #2e7d32;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+  }
+
+  .tick-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 4;
+    stroke: #2e7d32;
+    fill: none;
+    animation: dash 0.7s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  .tick-check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #2e7d32;
+    fill: none;
+    animation: dash 0.4s ease forwards;
+    animation-delay: 0.9s;
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="order-success" class="hidden">
+  <div class="tick-container">
+    <svg class="tick" viewBox="0 0 60 60">
+      <circle class="tick-circle" cx="28" cy="26" r="25" />
+      <path class="tick-check" d="M14 27l7 7 16-16" />
+    </svg>
+  </div>
+  <h2>Order Successful!</h2>
+  <p>Thank you for your purchase.</p>
+</div>
+
+<script>
+  // Show the success message after 1 second (simulate order completed)
+  setTimeout(() => {
+    document.getElementById('order-success').classList.remove('hidden');
+  }, 1000);
+</script>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP</title>
+<style>
+      body {
+            background-image: url(/templates/loginbackgroundimage/background.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            height: 470px;
+            margin-top: 100px;
+        }
+        .container1 {
+            border: 2px solid white;
+            border-radius: 20px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 5px 5px 5px #800020;
+            padding: 20px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+            color: #800020;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 80%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            color: #800020;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 1px solid #800020;
+            background-color: white;
+            outline: none;
+            box-shadow: 2px 2px 2px black;
+        }
+        input::placeholder {
+            color: #800020;
+            opacity: 0.7;
+            font-weight: bold;
+        }
+       
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        label[for="show_password"] {
+            font-size: 16px;
+            color: #800020;
+            font-weight: bold;
+        }
+        button {
+            background-color: white;
+            border-radius: 5px;
+            color: #800020;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #800020;
+            box-shadow: 2px 2px 2px black;
+            margin-top: 10px;
+        }
+        .signin-link {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        /* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Large tablets and small laptops (1024px and below) */
+@media (max-width: 1024px) {
+    .login-container {
+        width: 450px;
+        padding: 25px;
+    }
+    
+    .form-group input,
+    .login-btn {
+        padding: 14px;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .login-container {
+        width: 380px;
+        padding: 22px;
+    }
+    
+    h1 {
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    
+    .form-group label {
+        font-size: 15px;
+    }
+    
+    .password-options {
+        margin: 8px 0 18px;
+    }
+}
+
+/* Large phones (600px and below) */
+@media (max-width: 600px) {
+    .login-container {
+        width: 90%;
+        max-width: 400px;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .form-group input,
+    .login-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .password-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .forgot-password {
+        margin-top: 5px;
+        align-self: flex-start;
+    }
+}
+
+/* Small phones (480px and below) */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 18px;
+        border-radius: 15px;
+    }
+    
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group input,
+    .login-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .show-password label,
+    .forgot-password,
+    .signup-link {
+        font-size: 14px;
+    }
+    
+    .login-btn {
+        margin-bottom: 15px;
+    }
+}
+
+/* Extra small phones (360px and below) */
+@media (max-width: 360px) {
+    .login-container {
+        padding: 15px;
+        width: 95%;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .form-group input,
+    .login-btn {
+        padding: 8px 10px;
+    }
+    
+    .password-options {
+        margin: 5px 0 15px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 10px 0;
+        align-items: flex-start;
+    }
+    
+    .login-container {
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group input {
+        padding: 8px 10px;
+    }
+}
+</style>
+    
+</head>
+<body>
+    <div class="container1">
+        <a href="#">SIGN UP</a>
+        <form action="" method="POST">
+            <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+
+           
+            <div class="checkbox-container">
+                <input type="checkbox" id="show_password" onclick="togglePassword()"> 
+                <label for="show_password">Show Password</label>
+            </div>
+
+          <a href="/templates/login.html"><button type="submit">SIGN UP</button></a>  
+        </form>
+        
+        <div class="signin-link">
+            <a href="/templates/login.html">Already have an account? <b>Sign In</b></a>
+        </div>
+    </div>
+
+    <script >
+       function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var confirmPasswordField = document.getElementById("confirm_password");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                confirmPasswordField.type = "text";
+            } else {
+                passwordField.type = "password";
+                confirmPasswordField.type = "password";
+            }
+        } 
+    </script>
+</body>
+</html>
